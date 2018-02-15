@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
+require 'erb'
 require 'pg'
 require 'yaml'
-require 'erb'
 
 # Wait for 60 seconds for a connection
 retries = 30
 interval = 2
 
 rails_env = ENV.fetch('RAILS_ENV') { 'development' }
-database_yml = YAML.load(ERB.new(File.read(File.expand_path('../../config/database.yml', __FILE__))).result)[rails_env]
+database_yml = YAML.load(ERB.new(File.read(File.expand_path('./config/database.yml'))).result)[rails_env]
 
 connection_options = {
   user: database_yml['username'],
