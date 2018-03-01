@@ -18,7 +18,8 @@ connection_options = {
 }
 
 if database_yml['database_url'] && !database_yml['database_url'].empty?
-  connection_options = database_yml['database_url']
+  # Use the default adapter
+  connection_options = database_yml['database_url'].gsub(/^.*:\/\//, 'postgres://')
 end
 
 puts 'Waiting for PostgreSQL...'
