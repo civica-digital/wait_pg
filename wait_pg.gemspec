@@ -2,7 +2,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'wait_pg'
-  s.version     = '1.0.6'
+  s.version     = '1.0.7'
   s.authors     = ['mroutis']
   s.email       = ['outis@civica.digital']
   s.homepage    = 'https://github.com/civica-digital/wait_pg'

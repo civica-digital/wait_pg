@@ -16,7 +16,7 @@ def connection_options
   return ENV['DATABASE_URL'] unless yaml
 
   # Set the default adapter (for cases like PostGIS)
-  config = yaml['url'].sub(/^.*:\/\//, 'postgres://')
+  config = yaml['url'].sub(/^.*:\/\//, 'postgres://') if yaml['url']
 
   config ||= {
     user: yaml['username'],
