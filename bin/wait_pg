@@ -13,7 +13,7 @@ def connection_options
   yaml = YAML.load(ERB.new(File.read(path)).result)[rails_env]
 
   # Active Record uses it as a default
-  return ENV['DATABASE_URL'] unless yaml&.exist?
+  return ENV['DATABASE_URL'] unless yaml&.present?
 
   # Set the default adapter (for cases like PostGIS)
   config = yaml['url'].sub(/^.*:\/\//, 'postgres://')
