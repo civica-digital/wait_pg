@@ -36,10 +36,10 @@ end
 retries = 30
 interval = 2
 
-puts 'Waiting for PostgreSQL...'
 
-retries.times do
+retries.times do |current_retry|
   exit SUCCESS if connection_successful?
+  puts 'Waiting for PostgreSQL...' if current_retry.zero?
   sleep interval
 end
 

@@ -2,7 +2,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'wait_pg'
-  s.version     = '1.0.7'
+  s.version     = '1.0.8'
   s.authors     = ['mroutis']
   s.email       = ['outis@civica.digital']
   s.homepage    = 'https://github.com/civica-digital/wait_pg'
@@ -10,5 +10,5 @@ Gem::Specification.new do |s|
   s.license     = 'Unlicense'
   s.executables = 'wait_pg'
 
-  s.add_runtime_dependency 'pg', '~> 0'
+  s.add_runtime_dependency 'pg'
 end
